@@ -65,14 +65,6 @@ for epoch in range(5):
     losses.append(avg_loss)
     print(f"Epoch {epoch + 1} - Distillation Loss: {avg_loss:.4f}")
 
-# 7. Plot loss curve
-plt.plot(range(1, 6), losses, marker='o')
-plt.title("Distillation Loss Over Epochs")
-plt.xlabel("Epoch")
-plt.ylabel("Loss")
-plt.grid(True)
-plt.tight_layout()
-plt.show()
 
 # 8. Final inference comparison
 prompt = "The future of artificial intelligence is"
@@ -87,3 +79,12 @@ student_text = tokenizer.decode(student_gen[0], skip_special_tokens=True)
 
 print("\n🧠 Teacher Model Output:\n", teacher_text)
 print("\n📘 Student Model Output:\n", student_text)
+
+# 7. Plot loss curve
+plt.plot(range(1, 6), losses, marker='o')
+plt.title("Distillation Loss Over Epochs")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
